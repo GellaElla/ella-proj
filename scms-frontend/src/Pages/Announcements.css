@@ -1,0 +1,608 @@
+.announcements {
+  --an-green: #1f7a3d;
+  --an-green-dark: #14532b;
+  --an-green-bg: #e3f3e6;
+  --an-text: #21302a;
+  --an-text-muted: #6b7a72;
+  --an-border: #eef1ef;
+  --an-card-bg: #ffffff;
+  --an-page-bg: #f6f8f7;
+  --an-red: #d64545;
+  --an-red-bg: #fbe4e4;
+
+  background: var(--an-page-bg);
+  padding: 24px 28px 40px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--an-text);
+}
+
+.announcements * {
+  box-sizing: border-box;
+}
+
+/* ---------------- Heading ---------------- */
+.announcements .ann-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.announcements .ann-heading-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-left: 0 !important;
+}
+
+.announcements .ann-heading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: var(--an-green-bg);
+  color: var(--an-green);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.announcements .ann-heading h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--an-green-dark);
+}
+
+.announcements .ann-heading p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--an-text-muted);
+}
+
+.announcements .ann-heading-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.announcements .search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--an-border);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--an-text-muted);
+  min-width: 240px;
+}
+
+.announcements .search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--an-text);
+  width: 100%;
+  background: transparent;
+}
+
+.announcements .btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--an-green-dark);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.announcements .btn-primary:hover {
+  background: var(--an-green);
+}
+
+.announcements .btn-outline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--an-border);
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--an-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.announcements .btn-outline:hover {
+  border-color: var(--an-green);
+  color: var(--an-green);
+}
+
+.announcements .chevron {
+  font-size: 14px;
+  transition: transform 0.15s ease;
+}
+
+.announcements .chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ---------------- Pinned section ---------------- */
+.announcements .section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--an-green-dark);
+  margin: 0 0 12px;
+}
+
+.announcements .section-title.plain {
+  color: var(--an-text);
+}
+
+.announcements .pinned-section {
+  margin-bottom: 26px;
+}
+
+.announcements .pinned-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--an-green-bg);
+  border: 1px solid #cbe6cf;
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+
+.announcements .pinned-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.announcements .pinned-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--an-green);
+  background: #d3ecd7;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.announcements .pinned-body h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--an-text);
+}
+
+.announcements .pinned-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--an-green);
+  margin-bottom: 8px;
+}
+
+.announcements .pinned-body p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--an-text);
+  line-height: 1.5;
+}
+
+.announcements .pinned-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.announcements .btn-unpin {
+  background: #ffffff;
+}
+
+/* ---------------- Status badge ---------------- */
+.announcements .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.announcements .status-badge.active {
+  background: var(--an-green-bg);
+  color: var(--an-green);
+}
+
+.announcements .status-badge.archived {
+  background: #eef1ef;
+  color: var(--an-text-muted);
+}
+
+.announcements .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ---------------- List heading ---------------- */
+.announcements .list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.announcements .sort-wrap {
+  position: relative;
+}
+
+.announcements .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 170px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 20;
+}
+
+.announcements .dropdown-item {
+  border: none;
+  background: transparent;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--an-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.announcements .dropdown-item:hover {
+  background: #f4f7f4;
+}
+
+.announcements .dropdown-item.active {
+  background: var(--an-green-bg);
+  color: var(--an-green-dark);
+  font-weight: 700;
+}
+
+/* ---------------- Announcement cards ---------------- */
+.announcements .announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.announcements .announcement-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--an-card-bg);
+  border: 1px solid var(--an-border);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.announcements .announcement-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--an-green-bg);
+  color: var(--an-green);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.announcements .announcement-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.announcements .announcement-body h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--an-text);
+}
+
+.announcements .announcement-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--an-green);
+  margin-bottom: 6px;
+}
+
+.announcements .announcement-body p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--an-text-muted);
+  line-height: 1.4;
+}
+
+.announcements .announcement-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.announcements .icon-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--an-border);
+  background: #ffffff;
+  color: var(--an-text-muted);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.announcements .icon-square:hover {
+  border-color: var(--an-green);
+  color: var(--an-green);
+}
+
+.announcements .icon-square.edit {
+  border-color: #cbe6cf;
+  color: var(--an-green);
+}
+
+.announcements .icon-square.edit:hover {
+  background: var(--an-green-bg);
+}
+
+.announcements .icon-square.delete {
+  border-color: #f3c9c9;
+  color: var(--an-red);
+}
+
+.announcements .icon-square.delete:hover {
+  background: var(--an-red-bg);
+}
+
+.announcements .empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--an-text-muted);
+  font-size: 14px;
+  background: var(--an-card-bg);
+  border: 1px solid var(--an-border);
+  border-radius: 14px;
+}
+
+/* ---------------- Pagination ---------------- */
+.announcements .ann-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.announcements .pagination-summary {
+  font-size: 13px;
+  color: var(--an-text-muted);
+}
+
+.announcements .pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.announcements .page-btn {
+  min-width: 34px;
+  height: 34px;
+  border: 1px solid var(--an-border);
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--an-text);
+  cursor: pointer;
+}
+
+.announcements .page-btn:hover:not(:disabled) {
+  border-color: var(--an-green);
+  color: var(--an-green);
+}
+
+.announcements .page-btn.active {
+  background: var(--an-green-dark);
+  border-color: var(--an-green-dark);
+  color: #ffffff;
+}
+
+.announcements .page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ============================================================ */
+/* Modal                                                          */
+/* ============================================================ */
+
+.announcements .modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 40, 30, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.announcements .modal-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.announcements .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.announcements .modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--an-text);
+}
+
+.announcements .modal-close {
+  border: none;
+  background: transparent;
+  color: var(--an-text-muted);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.announcements .modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.announcements .field-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--an-text-muted);
+  margin-bottom: 6px;
+}
+
+.announcements .field-input, .announcements .field-textarea {
+  width: 100%;
+  border: 1px solid var(--an-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--an-text);
+  outline: none;
+  margin-bottom: 14px;
+}
+
+.announcements .field-input:focus, .announcements .field-textarea:focus {
+  border-color: var(--an-green);
+}
+
+.announcements .field-textarea {
+  resize: vertical;
+}
+
+.announcements .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ============================================================ */
+/* Responsive                                                     */
+/* ============================================================ */
+
+@media (max-width: 900px) {
+  .announcements .pinned-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .announcements .pinned-side {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .announcements .announcement-card {
+    flex-wrap: wrap;
+  }
+
+  .announcements .announcement-body {
+    flex-basis: 100%;
+    order: 1;
+  }
+
+  .announcements .status-badge {
+    order: 2;
+  }
+
+  .announcements .announcement-actions {
+    order: 3;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .announcements {
+    padding: 16px 14px 30px;
+  }
+
+  .announcements .ann-heading-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .announcements .search-box {
+    min-width: 0;
+  }
+
+  .announcements .ann-pagination {
+    justify-content: center;
+  }
+}

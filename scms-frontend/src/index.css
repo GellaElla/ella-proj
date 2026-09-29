@@ -1,0 +1,42 @@
+:root {
+  font-family: "Segoe UI", Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #17231c;
+  background: #f4f7f5;
+  --scms-green-950: #063d1f;
+  --scms-green-800: #0a6634;
+  --scms-green-700: #0c7a3e;
+  --scms-green-100: #dff2e5;
+  --scms-green-50: #f0f8f2;
+  --scms-ink: #17231c;
+  --scms-muted: #66736b;
+  --scms-border: #dfe7e1;
+  --scms-page: #f4f7f5;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100vh;
+}
+
+body {
+  min-width: 320px;
+  background: var(--scms-page);
+  color: var(--scms-ink);
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+button, input, select, textarea { font: inherit; }
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(12, 122, 62, .24);
+  outline-offset: 2px;
+}

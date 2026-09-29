@@ -1,0 +1,176 @@
+.app-header {
+  --header-green-dark: #14532b;
+  --header-green: #1a5c2a;
+  --header-green-darker: #0f4020;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 clamp(16px, 2.4vw, 32px);
+  background: linear-gradient(100deg, #063d1f, #08703a);
+  box-shadow: 0 3px 16px rgba(6, 61, 31, 0.15);
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Left side: hamburger + welcome text */
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-header-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.app-header-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.app-header-menu-btn:focus-visible,
+.app-header-profile:focus-visible { outline-color: rgba(255, 255, 255, .72); }
+
+.app-header-welcome {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Right side: profile */
+.app-header-right {
+  position: relative;
+}
+
+.app-header-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.app-header-profile:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.app-header-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--header-green-dark);
+  font-size: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.app-header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-header-admin-name {
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.app-header-chevron {
+  color: #ffffff;
+  font-size: 16px;
+  transition: transform 0.15s ease;
+}
+
+.app-header-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.app-header-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 180px;
+  background: #ffffff;
+  border: 1px solid var(--scms-border);
+  border-radius: 12px;
+  box-shadow: 0 16px 38px rgba(19, 43, 27, .16);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 20;
+}
+
+.app-header-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3a33;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.app-header-dropdown-item:hover {
+  background: #f4f7f4;
+}
+
+.app-header-dropdown-item.danger {
+  color: #c0392b;
+}
+
+/* ============================================
+   TABLET / MOBILE
+   ============================================ */
+@media (max-width: 640px) {
+  .app-header {
+    padding: 0 14px;
+  }
+
+  .app-header-welcome {
+    font-size: 15px;
+  }
+
+  .app-header-admin-name {
+    display: none;
+  }
+
+  .app-header-chevron {
+    display: none;
+  }
+
+  .app-header-profile {
+    padding: 4px;
+  }
+}
