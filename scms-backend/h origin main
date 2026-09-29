@@ -1,0 +1,10 @@
+app/Http/Controllers/BurialRequestController.php
+app/Http/Controllers/MedicalRequestController.php
+app/Models/BurialRequest.php
+app/Models/MedicalRequest.php
+database/migrations/2026_09_21_144731_create_medical_requests_table.php
+database/migrations/2026_09_21_214955_add_reference_to_medical_requests_table.php
+database/migrations/2026_09_21_223319_fix_medical_requests_reference_column.php
+database/migrations/2026_09_21_223900_create_burial_requests_table.php
+database/migrations/2026_09_22_120758_add_details_to_burial_requests_table.php
+routes/api.php
